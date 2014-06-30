@@ -1,0 +1,9 @@
+ name: FakeWalls
+ author: Marenwynn
+ depend: [ProtocolLib]
+ main: com.github.marenwynn.fakewalls.PluginMain
+ version: 2.0
+ commands:
+   fw:
+     description: FakeWalls top-level command
+     usage: /fw <create | type | remove | list | select>
