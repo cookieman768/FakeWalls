@@ -6,4 +6,4 @@
  commands:
    fw:
      description: FakeWalls top-level command
-     usage: /fw <create | type | remove | list | select>
+     usage: /fw <create | type | remove | list | select | reload>
