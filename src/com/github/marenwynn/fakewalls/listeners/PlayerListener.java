@@ -114,7 +114,16 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent quitEvent) {
-        pm.clearSelection(quitEvent.getPlayer().getName());
+        Player p = quitEvent.getPlayer();
+
+        for (FakeWall fw : pm.getData().getAllFakeWalls()) {
+            String key = Util.getKey(fw.getName());
+
+            if (p.hasMetadata(key))
+                p.removeMetadata(key, pm);
+        }
+
+        pm.clearSelection(p.getName());
     }
 
     @SuppressWarnings("deprecation")

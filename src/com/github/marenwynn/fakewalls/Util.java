@@ -26,7 +26,7 @@ public class Util {
     }
 
     public static String getKey(String string) {
-        return ChatColor.stripColor(string.toLowerCase());
+        return ChatColor.stripColor(string.toLowerCase()).replaceAll(" ", "_");
     }
 
 }

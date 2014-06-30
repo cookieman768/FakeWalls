@@ -12,6 +12,7 @@ import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import com.github.marenwynn.fakewalls.commands.FWCreateCmd;
 import com.github.marenwynn.fakewalls.commands.FWListCmd;
+import com.github.marenwynn.fakewalls.commands.FWReloadCmd;
 import com.github.marenwynn.fakewalls.commands.FWRemoveCmd;
 import com.github.marenwynn.fakewalls.commands.FWSelectCmd;
 import com.github.marenwynn.fakewalls.commands.FWTypeCmd;
@@ -31,12 +32,15 @@ public class PluginMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        saveResource("CHANGELOG.txt", true);
+
         data = new Database(this);
         playerSelections = new HashMap<String, Selection>();
 
         commands = new HashMap<String, PluginCommand>();
         commands.put("create", new FWCreateCmd(this));
         commands.put("list", new FWListCmd(this));
+        commands.put("reload", new FWReloadCmd(this));
         commands.put("remove", new FWRemoveCmd(this));
         commands.put("select", new FWSelectCmd(this));
         commands.put("type", new FWTypeCmd(this));

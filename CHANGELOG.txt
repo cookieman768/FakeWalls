@@ -1,0 +1,8 @@
+CHANGELOG
+
+2.0.1 (06/30/2014):
+- Added "/fw reload" for reloading plugin configuration
+- Changed access permissions to replace spaces with underscores
+- Player sent wall meta is now cleared when quitting
+- Removed checks for walls not in player's current world
+- Added CHANGELOG.TXT
