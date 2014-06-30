@@ -46,6 +46,9 @@ public class PlayerListener implements Listener {
 
         if (clickEvent.getClickedBlock().getType() == Material.PISTON_MOVING_PIECE) {
             for (FakeWall fw : pm.getData().getAllFakeWalls()) {
+                if (!p.getWorld().getName().equals(fw.getMinCorner().getWorld().getName()))
+                    continue;
+
                 if (Util.isWithinBounds(loc, fw.getMinCorner(), fw.getMaxCorner(), 0)) {
                     if (p.getItemInHand() != null && p.getItemInHand().getType() == Material.WOOD_SPADE) {
                         pm.selectWall(p, fw);

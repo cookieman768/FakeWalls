@@ -2,7 +2,7 @@
  author: Marenwynn
  depend: [ProtocolLib]
  main: com.github.marenwynn.fakewalls.PluginMain
- version: 2.0
+ version: 2.0.1
  commands:
    fw:
      description: FakeWalls top-level command
